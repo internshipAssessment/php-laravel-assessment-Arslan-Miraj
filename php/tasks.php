@@ -12,7 +12,11 @@
 // Return the first non-repeating character or null if none.
 // ------------------------------------------------------------
 function firstUniqueChar(string $s): ?string {
+    $unique = char($s)
     // TODO: implement
+    foreach ($unique as asc){
+        echo asc;
+    }
     return null;
 }
 
@@ -22,8 +26,12 @@ function firstUniqueChar(string $s): ?string {
 // Return the integer total (e.g., 599)
 // ------------------------------------------------------------
 function sumOrder(array $items): int {
-    // TODO: implement
-    return 0;
+  $sum = 0;
+    foreach($items as item){
+      $sum = item->qty * item->unit_price;
+
+    }
+    return $sum;
 }
 
 // ------------------------------------------------------------
