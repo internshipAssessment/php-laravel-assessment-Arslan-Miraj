@@ -8,7 +8,10 @@
 -- Return: user_id, name, order_count
 -- Sort: order_count DESC
 -- TODO: Write the SQL below
-SELECT
+  SELECT user_id, name, COUNT(id) as order_count
+FROM order
+LEFT JOIN user ON users.id = .user_id
+WHERE user_id > 3 ORDER BY DESC
   -- TODO
 ;
 
