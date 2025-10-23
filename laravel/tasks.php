@@ -25,8 +25,12 @@ $orders = null; // TODO: assign Eloquent query result to $orders
 // ------------------------------------------------------------
 function userStoreRules(): array
 {
-    // TODO: return array of Laravel validation rules
-    return [];
+    $validation = Validator::make($request->all(), [
+        'name' => 'required|string|min:2|max:60',
+        'email' => 'required|unique:users|email',
+        'password' => 'required|min:8|confirmed'
+    ]);
+    return compact('validation');
 }
 
 // ------------------------------------------------------------
